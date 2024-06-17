@@ -68,4 +68,12 @@
     .market-cap {
         text-align: right;
     }
+
+    img {
+        max-width: 20px;
+    }
+    .logo-name {
+        display: flex;
+        gap : 5px;
+        }
 }

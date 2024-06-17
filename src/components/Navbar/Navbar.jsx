@@ -4,7 +4,7 @@ import signupIcon from "../../assets/arrow_icon.png"
 
 function Navbar() {
     return (
-        <navbar className="navbar">
+        <div className="navbar">
             <img src={logo} alt="Logo" />
             <ul>
                 <li>Home</li>
@@ -19,7 +19,7 @@ function Navbar() {
                 </select>
                 <button>Sign Up <img src={signupIcon} alt="Sign up Icon" /></button>
             </div>
-        </navbar>
+        </div>
     )
 }
 

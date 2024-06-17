@@ -42,13 +42,16 @@ function Home(){
                 {allCoins.map( (coin, index) => {
                         return <div className="table-layout" key={index}> 
                             <p> {index+1} </p>
-                            <p> {coin.name} </p>                        
-                            <p> {coin.current_price} </p>
-                            <p> {coin.price_change_24h} </p>
+                            <div className="logo-name"> 
+                                <img src={coin.image} alt = "Coin logo"/>
+                                <p> {coin.name + " - " + coin.symbol} </p>                        
+                            </div>
+                            <p> ${coin.current_price} </p>
+                            <p> { Math.floor(coin.price_change_24h * 100)/100 } </p>
                             <p className="market-cap"> {coin.market_cap} </p>
                         </div>
                     } )}
-            </div>
+             </div>
         </div>
     )
 }
