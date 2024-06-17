@@ -50,3 +50,22 @@
         }
     }
 }
+
+.crypto-table {
+    max-width: 800px;
+    margin: auto;
+    background-color: rgba(65, 211, 165, 0.344) ;
+    border-radius: 15px;
+}
+
+.table-layout {
+    display: grid;
+    grid-template-columns: 0.5fr 2fr 1fr 1fr 1.5fr;
+    padding: 15px 20px;
+    align-items: center;
+    border-bottom: 1px solid white;
+
+    .market-cap {
+        text-align: right;
+    }
+}
