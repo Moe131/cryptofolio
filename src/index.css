@@ -1,7 +1,11 @@
+@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@100..900&display=swap');
+
 * {
   padding : 0;
   margin : 0;
   box-sizing: border-box;
+  font-family: "Outfit", sans-serif;
+
 }
 
 a  {
@@ -12,5 +16,55 @@ a  {
 .app {
   min-height: 100vh;
   color: white;
-  background: linear-gradient(#0b004e, #);
+  background: linear-gradient(109.6deg, rgb(72, 200, 160) 11.2%, rgb(32, 40, 48) 91.3%);
+}
+
+.navbar {
+  display: flex;
+  align-items: center;  
+  justify-content: space-between;
+  padding : 20px 10px;
+  border-bottom: 2px solid rgb(217, 237, 231);
+
+  img {
+    max-width: 250px;
+  }
+
+  ul {
+    display: flex;
+    gap : 40px;
+    list-style: none;
+  }
+  .nav-right {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+
+    select {
+      padding: 5px 5px;
+      border-radius: 6px;
+      border: 2px solid white;
+      background: transparent;
+      color: white;
+    }
+  
+    option {
+      background: rgb(72, 200, 160);
+      color: white;
+    } 
+
+    button {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      padding: 10px 20px;
+      border-radius: 20px;
+      font-size: 15px;
+      font-weight: 500;
+      color: black;
+      background: white;
+      border: none;
+      cursor: pointer;
+    } 
+  }
 }
