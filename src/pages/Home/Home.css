@@ -87,3 +87,34 @@
 .table-layout:last-child {
         border:none;
 }
+
+
+@media (width < 768px){
+    .table-layout {
+        font-size: 11px;
+        grid-template-columns: 0.5fr 2fr 1fr 1fr 1.25fr;
+        padding: 7px 15px;
+    img {
+        width: 17px;
+    }
+  }
+}
+
+@media (width < 480px){
+    .table-layout {
+        font-size: 11px;
+        grid-template-columns: 0.5fr 3fr 1fr 1fr;
+    .market-cap {
+        display: none;
+    }
+    img {
+        width: 17px;
+    }
+    .green {
+        text-align: right;
+    }
+    .red {
+        text-align: right;
+    }
+  }
+}
