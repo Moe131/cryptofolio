@@ -4,6 +4,9 @@ import "./Home.css"
 
 function Home(){
     const [allCoins , setAllCoins ] = React.useState([]);
+    const [displayCoins, setDisplay] = React.useState([]);
+    const [input, setInput] = React.useState("");
+
     React.useEffect( () => {
         const options = {
             method: 'GET',
@@ -15,13 +18,29 @@ function Home(){
           fetch('https://api.coingecko.com/api/v3/coins/markets?vs_currency=usd', options)
             .then(response => response.json())
             .then(response => setAllCoins( (prev) => { return response}))
+            .then(   setDisplay( allCoins ) )
             .catch(err => console.error(err));
-        
+        }, []
+    )
 
-    }, [])
+    function handleChange(event){
+        setInput(event.target.value)
+        if (event.target.value === ""){
+            setDisplay(allCoins)
+        }
+        else {
+            setDisplay( allCoins.filter(
+                (item) => { return item.name.toLowerCase().includes(event.target.value.toLowerCase())}
+            ))
+        }
+    }
+
+    function handleSubmit(event){
+        event.preventDefault()
+    }
 
     function getTop10(index){
-        return allCoins.slice(index, index+10)
+        return displayCoins.slice(index, index+10)
     }
 
     return (
@@ -31,8 +50,8 @@ function Home(){
                 <p>Welcome to the world's largest cryptocurrency marketplace.
                     Sign up to explore more about cryptos. 
                 </p>
-                <form>
-                    <input type="text" placeholder="Search Coin" />
+                <form onSubmit={handleSubmit}>
+                    <input onChange={handleChange} value={input} type="text" placeholder="Search Coin"  required/>
                     <button type="submit">Search</button>
                 </form>
             </div>
@@ -46,7 +65,7 @@ function Home(){
                 </div>
                 {getTop10(0).map( (coin, index) => {
                         return <div className="table-layout" key={index}> 
-                            <p> {index+1} </p>
+                            <p> {coin.market_cap_rank} </p>
                             <div className="logo-name"> 
                                 <img src={coin.image} alt = "Coin logo"/>
                                 <p> {coin.name + " - " + coin.symbol} </p>                        
