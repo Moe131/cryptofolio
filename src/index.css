@@ -25,6 +25,9 @@ a  {
   justify-content: space-between;
   padding : 20px 20px;
   border-bottom: 2px solid rgb(217, 237, 231);
+  box-shadow: 0px 0px 10px 2px white;
+  
+
 
   img {
     max-width: 250px;
