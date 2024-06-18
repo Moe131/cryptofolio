@@ -7,7 +7,7 @@ function Home(){
     const [displayCoins, setDisplay] = React.useState([]);
     const [input, setInput] = React.useState("");
 
-    React.useEffect( () => {
+    function fetchAll(){
         const options = {
             method: 'GET',
             headers: {
@@ -17,15 +17,17 @@ function Home(){
           };
           fetch('https://api.coingecko.com/api/v3/coins/markets?vs_currency=usd', options)
             .then(response => response.json())
-            .then(response => setAllCoins( (prev) => { return response}))
+            .then(response => { setAllCoins(response);
+                setDisplay( response);
+            } )
             .catch(err => console.error(err));
-        }, []
-    )
+    }
+
 
     React.useEffect(
-        () => {setDisplay( allCoins );
-        }
-    )
+        () => {
+             fetchAll()
+        }, [] )
 
     function handleChange(event){
         setInput(event.target.value)

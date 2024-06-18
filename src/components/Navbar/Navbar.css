@@ -6,6 +6,10 @@
     border-bottom: 2px solid rgb(217, 237, 231);
     box-shadow: 0px 0px 10px 2px white;
 
+    .nav-link {
+        color: white;
+        text-decoration: none; 
+    }
     
     img {
       max-width: 250px;
@@ -85,3 +89,4 @@
     }
 
 }
+

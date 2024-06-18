@@ -10,10 +10,10 @@ function Navbar() {
                 <img src={logo} alt="Logo" />
             </Link>
             <ul className="nav-list">
-                <Link to={"/"}> <li>Home</li> </Link>
-                <Link to={"/about"}> <li>About</li> </Link>
-                <Link to={"/pricing"}> <li>Pricing</li> </Link>
-                <Link to={"/contact"}> <li>Contact us</li> </Link>
+            <li><Link to="/" className="nav-link">Home</Link></li>
+                <li><Link to="/about" className="nav-link">About</Link></li>
+                <li><Link to="/pricing" className="nav-link">Pricing</Link></li>
+                <li><Link to="/contact" className="nav-link">Contact us</Link></li>
             </ul>
             <div className="nav-right">
                 <button className="login-btn">Login</button>
