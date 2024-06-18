@@ -10,16 +10,16 @@ import NoPage from "./pages/NoPage/NoPage";
 function App() {
   return (
     <div className="app">
-      <Navbar />
       <BrowserRouter>
+      <Navbar />
         <Routes>
           <Route index element={<Home />} />
           <Route path="/home" element={<Home />} />
           <Route path="/coin/:coinId" element={<Coin />} />
           <Route path="*" element={<NoPage />} />
         </Routes>
+        <Footer />
       </BrowserRouter>
-      <Footer />
     </div>
   )
 }

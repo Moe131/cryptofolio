@@ -64,6 +64,9 @@
     padding: 15px 20px;
     align-items: center;
     border-bottom: 1px solid white;
+    text-decoration: none;
+    color: white;
+
 
     .market-cap {
         text-align: right;

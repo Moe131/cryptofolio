@@ -1,6 +1,6 @@
 import React from "react";
 import "./Home.css"
-
+import { Link } from "react-router-dom";
 
 function Home(){
     const [allCoins , setAllCoins ] = React.useState([]);
@@ -18,9 +18,13 @@ function Home(){
           fetch('https://api.coingecko.com/api/v3/coins/markets?vs_currency=usd', options)
             .then(response => response.json())
             .then(response => setAllCoins( (prev) => { return response}))
-            .then(   setDisplay( allCoins ) )
             .catch(err => console.error(err));
         }, []
+    )
+
+    React.useEffect(
+        () => {setDisplay( allCoins );
+        }
     )
 
     function handleChange(event){
@@ -64,7 +68,8 @@ function Home(){
                     <p className="market-cap">Market Cap</p>
                 </div>
                 {getTop10(0).map( (coin, index) => {
-                        return <div className="table-layout" key={index}> 
+                        return (
+                        <Link to={"/coin/"+coin.id} className="table-layout" key={index}> 
                             <p> {coin.market_cap_rank} </p>
                             <div className="logo-name"> 
                                 <img src={coin.image} alt = "Coin logo"/>
@@ -74,7 +79,8 @@ function Home(){
                             <p className={coin.price_change_percentage_24h > 0 ? "green" : "red"}
                             > { Math.floor(coin.price_change_percentage_24h * 100)/100 }% </p>
                             <p className="market-cap"> ${coin.market_cap.toLocaleString()} </p>
-                        </div>
+                        </Link>
+                        )
                     } )}
              </div>
         </div>

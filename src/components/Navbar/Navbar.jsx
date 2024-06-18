@@ -1,17 +1,19 @@
 import React from "react";
-import logo from "../../assets/logo-white.png"
-import signupIcon from "../../assets/arrow_icon.png"
+import logo from "../../assets/logo-white.png";
+import { Link } from "react-router-dom";
 import "./Navbar.css"
 
 function Navbar() {
     return (
         <div className="navbar">
-            <img src={logo} alt="Logo" />
+            <Link to={"/"}>
+                <img src={logo} alt="Logo" />
+            </Link>
             <ul className="nav-list">
-                <li>Home</li>
-                <li>About</li>
-                <li>Pricing</li>
-                <li>Contact us</li>
+                <Link to={"/"}> <li>Home</li> </Link>
+                <Link to={"/about"}> <li>About</li> </Link>
+                <Link to={"/pricing"}> <li>Pricing</li> </Link>
+                <Link to={"/contact"}> <li>Contact us</li> </Link>
             </ul>
             <div className="nav-right">
                 <button className="login-btn">Login</button>
