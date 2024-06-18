@@ -4,7 +4,6 @@ import "./Home.css"
 
 function Home(){
     const [allCoins , setAllCoins ] = React.useState([]);
-
     React.useEffect( () => {
         const options = {
             method: 'GET',
@@ -17,7 +16,13 @@ function Home(){
             .then(response => response.json())
             .then(response => setAllCoins( (prev) => { return response}))
             .catch(err => console.error(err));
+        
+
     }, [])
+
+    function getTop10(index){
+        return allCoins.slice(index, index+10)
+    }
 
     return (
         <div className="home">
@@ -39,7 +44,7 @@ function Home(){
                     <p>24H Change</p>
                     <p className="market-cap">Market Cap</p>
                 </div>
-                {allCoins.map( (coin, index) => {
+                {getTop10(0).map( (coin, index) => {
                         return <div className="table-layout" key={index}> 
                             <p> {index+1} </p>
                             <div className="logo-name"> 
@@ -47,8 +52,9 @@ function Home(){
                                 <p> {coin.name + " - " + coin.symbol} </p>                        
                             </div>
                             <p> ${coin.current_price} </p>
-                            <p> { Math.floor(coin.price_change_24h * 100)/100 } </p>
-                            <p className="market-cap"> {coin.market_cap} </p>
+                            <p className={coin.price_change_percentage_24h > 0 ? "green" : "red"}
+                            > { Math.floor(coin.price_change_percentage_24h * 100)/100 }% </p>
+                            <p className="market-cap"> ${coin.market_cap.toLocaleString()} </p>
                         </div>
                     } )}
              </div>

@@ -76,4 +76,14 @@
         display: flex;
         gap : 5px;
         }
+    .green {
+        color : greenyellow;
+    }
+    .red {
+        color : rgb(255, 93, 93);
+    }
+}
+
+.table-layout:last-child {
+        border:none;
 }
