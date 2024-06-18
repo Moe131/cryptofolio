@@ -4,7 +4,7 @@ import "./Coin.css"
 function Coin(){
     return (
         <div>
-            <h2>Home</h2>
+            <h1>Coins</h1>
         </div>
     )
 }
