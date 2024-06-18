@@ -1,6 +1,7 @@
 import React from "react";
 import logo from "../../assets/logo-white.png"
 import signupIcon from "../../assets/arrow_icon.png"
+import "./Navbar.css"
 
 function Navbar() {
     return (
