@@ -1,7 +1,39 @@
 .coin {
+    padding: 40px 40px;
     display: grid;
     place-self: center;
+    text-align: center;
+    
+    .coin-name {
+        place-self: center;
+        padding: 20px;
+        img {
+            max-width: 100px;
+        }
+    }
+    .coin-details a {
+        color : rgb(186, 246, 167);
+    }
+    .coin-info {
+        max-width: 600px;
+        margin: 30px auto;
+        ul {
+            display: flex;
+            justify-content: space-between;
+            padding: 10px 0px;
+            border-bottom: 1px solid white;
+            list-style: none;
+        }
+        .green {
+            color : greenyellow;
+        }
+        .red {
+            color : rgb(255, 93, 93);
+        }
+    }
 }
+
+
 .loading {
     display: grid;
     padding: 40px 40px;
