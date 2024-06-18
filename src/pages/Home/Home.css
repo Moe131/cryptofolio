@@ -89,9 +89,9 @@
 }
 
 
-@media (width < 768px){
+@media (max-width: 600px){
     .table-layout {
-        font-size: 11px;
+        font-size: 12px;
         grid-template-columns: 0.5fr 2fr 1fr 1fr 1.25fr;
         padding: 7px 15px;
     img {
@@ -100,7 +100,7 @@
   }
 }
 
-@media (width < 480px){
+@media (max-width: 480px){
     .table-layout {
         font-size: 11px;
         grid-template-columns: 0.5fr 3fr 1fr 1fr;
@@ -117,4 +117,9 @@
         text-align: right;
     }
   }
+    .home .hero button {
+        font-size: 15px;
+        padding: 5px 10px;
+    }
+
 }

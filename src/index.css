@@ -19,55 +19,6 @@ a  {
   background: linear-gradient(109.6deg, rgb(72, 200, 160) 11.2%, rgb(32, 40, 48) 91.3%);
 }
 
-.navbar {
-  display: flex;
-  align-items: center;  
-  justify-content: space-between;
-  padding : 20px 20px;
-  border-bottom: 2px solid rgb(217, 237, 231);
-  box-shadow: 0px 0px 10px 2px white;
-  
-
-
-  img {
-    max-width: 250px;
-  }
-
-  ul {
-    display: flex;
-    gap : 40px;
-    list-style: none;
-  }
-  .nav-right {
-    display: flex;
-    align-items: center;
-    gap: 10px;
-
-    select {
-      padding: 5px 5px;
-      border-radius: 6px;
-      border: 2px solid white;
-      background: transparent;
-      color: white;
-    }
-  
-    option {
-      background: rgb(72, 200, 160);
-      color: white;
-    } 
-
-    button {
-      display: flex;
-      align-items: center;
-      gap: 10px;
-      padding: 10px 20px;
-      border-radius: 20px;
-      font-size: 15px;
-      font-weight: 500;
-      color: black;
-      background: white;
-      border: none;
-      cursor: pointer;
-    } 
-  }
+button:hover {
+  transform: scale(1.10);
 }

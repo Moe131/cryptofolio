@@ -1,4 +1,5 @@
 
+
 .navbar {
     display: flex;
     align-items: center;  
@@ -48,25 +49,40 @@
         border: none;
         cursor: pointer;
       } 
+      .login-btn {
+        background-color: rgb(65, 211, 165);
+        }
     }
   }
 
 
 
-  @media (width > 768px){
+@media (max-width: 800px){
     .navbar {
         padding: 20px 1px;
-        
-        img {
-            max-width: 150px;
-        }
-        ul {
+        .nav-list{
             display: none;
         }
-        button {
-            gap: 8px;
-            padding: 5px 10px;
-            font-size: 12px;
+    }
+    .login-btn {
+        background-color: black;
+    }
+}
+
+@media (max-width: 480px){
+    .navbar {
+        padding: 10px 5px;
+    
+        img {
+            width: 180px;
         }
-  }
+        .nav-list{
+            display: none;
+        }
+        .nav-right button {
+            gap: 5px;
+            padding: 7px 14px;
+        }
+    }
+
 }

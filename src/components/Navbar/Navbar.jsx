@@ -7,18 +7,15 @@ function Navbar() {
     return (
         <div className="navbar">
             <img src={logo} alt="Logo" />
-            <ul>
+            <ul className="nav-list">
                 <li>Home</li>
                 <li>About</li>
                 <li>Pricing</li>
                 <li>Contact us</li>
             </ul>
             <div className="nav-right">
-                <select>
-                    <option value="usd">USD</option>
-                    <option value="usd">EUR</option>
-                </select>
-                <button>Sign Up <img src={signupIcon} alt="Sign up Icon" /></button>
+                <button className="login-btn">Login</button>
+                <button className="signup-btn">Sign up</button>
             </div>
         </div>
     )
