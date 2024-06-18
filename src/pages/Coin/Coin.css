@@ -1,0 +1,27 @@
+.coin {
+    display: grid;
+    place-self: center;
+}
+.loading {
+    display: grid;
+    padding: 40px 40px;
+    place-self: center;
+}
+
+.spin {
+    width: 65px;
+    height: 65px;
+    place-self: center;
+    border: 5px solid #bdbdbd;
+    border-top-color: #ffffff;
+    border-radius: 50%;
+    animation: rotate 2s infinite;
+    place-self: center;
+
+}
+
+@keyframes rotate {
+    100% {
+        transform: rotate(360deg);
+    }
+}
