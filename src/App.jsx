@@ -8,6 +8,7 @@ import NoPage from "./pages/NoPage/NoPage";
 import ContactUs from "./pages/ContactUs/ContactUs";
 import About from "./pages/About/About";
 import SignUp from "./pages/SignUp/SignUp";
+import Login from "./pages/Login/Login";
 
 
 function App() {
@@ -22,6 +23,7 @@ function App() {
           <Route path="/contactus" element={<ContactUs />} />
           <Route path="/coin/:coinId" element={<Coin />} />
           <Route path="/signup" element={<SignUp />} />
+          <Route path="/login" element={<Login />} />
           <Route path="*" element={<NoPage />} />
         </Routes>
         <Footer />

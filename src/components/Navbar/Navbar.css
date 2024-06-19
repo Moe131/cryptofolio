@@ -13,7 +13,7 @@
 }
 
 .button-link {
-    color: black;
+    color: inherit;
     text-decoration: none;
 }
 
@@ -73,6 +73,7 @@
     background-color: rgba(65, 211, 165, 0.694);
     color: white;
 }
+
 
 @media (max-width: 800px) {
     .navbar {
