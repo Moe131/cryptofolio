@@ -12,7 +12,7 @@ function Home(){
             method: 'GET',
             headers: {
               accept: 'application/json',
-              'x-cg-demo-api-key': 'CG-r6niR1noVmBu5S5vAvxheV6U	'
+              'x-cg-demo-api-key': import.meta.env.VITE_API_KEY
             }
           };
           fetch('https://api.coingecko.com/api/v3/coins/markets?vs_currency=usd', options)
