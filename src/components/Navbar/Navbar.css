@@ -65,7 +65,8 @@
 }
 
 .navbar .nav-right .login-btn {
-    background-color: rgb(65, 211, 165);
+    background-color: rgba(65, 211, 165, 0.694);
+    color: white;
 }
 
 @media (max-width: 800px) {
