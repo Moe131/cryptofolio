@@ -28,7 +28,7 @@ function Navbar() {
             </ul>
             <div className="nav-right">
                 <button className="login-btn">Login</button>
-                <button className="signup-btn">Sign up</button>
+                <button className="signup-btn"><Link to="/signup" className="button-link" onClick={handleLinkClick}>Sign Up</Link></button>
             </div>
             <input type="checkbox" onChange={handleChange} value={menuChecked} id="check" name="check"/>
             <label  htmlFor="check" className="check-btn">

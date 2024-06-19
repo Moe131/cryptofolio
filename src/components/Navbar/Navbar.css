@@ -7,8 +7,13 @@
     box-shadow: 0px 0px 10px 2px white;
 }
 
-.navbar .nav-link {
+.nav-link {
     color: white;
+    text-decoration: none;
+}
+
+.button-link {
+    color: black;
     text-decoration: none;
 }
 
