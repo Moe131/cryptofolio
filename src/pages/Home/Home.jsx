@@ -53,8 +53,7 @@ function Home(){
         <div className="home">
             <div className="hero">
                 <h1>Largest <br/> Crypto Coins by Market Capitalization</h1>
-                <p>Welcome to the world's largest cryptocurrency marketplace.
-                    Sign up to explore more about cryptos. 
+                <p>Track Your Favorite Cryptocurrencies: Create Custom Watchlists with Our Secure Crypto Tracking App 
                 </p>
                 <form onSubmit={handleSubmit}>
                     <input onChange={handleChange} value={input} type="text" placeholder="Search Coin"  required/>
