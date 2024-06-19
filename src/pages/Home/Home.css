@@ -30,7 +30,6 @@
         display: flex;
         justify-content: space-between;
         align-items: center;
-        gap : 10px;
 
         input {
             flex: 1;
@@ -101,6 +100,9 @@
         width: 17px;
     }
   }
+  .home .hero {
+    margin : 50px auto;
+}
 }
 
 @media (max-width: 480px){
@@ -120,9 +122,13 @@
         text-align: right;
     }
   }
+    .home .hero {
+        margin : 45px auto;
+    }
     .home .hero button {
-        font-size: 15px;
+        font-size: 13px;
         padding: 5px 10px;
+        margin-right: auto;
     }
 
 }
