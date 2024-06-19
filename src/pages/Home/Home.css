@@ -121,7 +121,10 @@
     .red {
         text-align: right;
     }
-  }
+    }
+    .hero h1 {
+        font-size : 35px;
+    }
     .home .hero {
         margin : 45px auto;
     }
