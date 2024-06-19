@@ -12,16 +12,19 @@ function Navbar() {
         setMenu(!menuChecked)
     }
 
+    function handleLinkClick() {
+        setMenu(true);
+    }
     return (
         <div className="navbar">
             <Link to={"/"}>
                 <img src={logo} alt="Logo" />
             </Link>
             <ul className={ menuChecked ? "nav-list" : "nav-list-res"}>
-                <li><Link to="/" className="nav-link">Home</Link></li>
-                <li><Link to="/about" className="nav-link">About</Link></li>
-                <li><Link to="/pricing" className="nav-link">Pricing</Link></li>
-                <li><Link to="/contact" className="nav-link">Contact us</Link></li>
+                <li><Link to="/" className="nav-link" onClick={handleLinkClick}>Home</Link></li>
+                <li><Link to="/about" className="nav-link" onClick={handleLinkClick}>About</Link></li>
+                <li><Link to="/pricing" className="nav-link" onClick={handleLinkClick}>Pricing</Link></li>
+                <li><Link to="/contact" className="nav-link" onClick={handleLinkClick}>Contact us</Link></li>
             </ul>
             <div className="nav-right">
                 <button className="login-btn">Login</button>
