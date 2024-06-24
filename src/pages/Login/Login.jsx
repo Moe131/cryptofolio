@@ -1,12 +1,17 @@
 import React, { useState } from "react";
 import "./Login.css";
+import { useNavigate } from "react-router-dom";
+import { signIn } from 'aws-amplify/auth';
 
-function Login() {
+
+function Login(props) {
     const [formData, setFormData] = useState({
-        email: "",
+        username: "",
         password: ""
     });
 
+    const Navigate = useNavigate()
+    const [error, setError] = useState("");
     const [submitted, setSubmitted] = useState(false);
 
     function handleChange(event) {
@@ -17,10 +22,19 @@ function Login() {
         }));
     }
 
-    function handleSubmit(event) {
+    async function handleSubmit(event) {
         event.preventDefault();
         // Here you would typically handle form submission, e.g., sending the data to a server
-        setSubmitted(true);
+        try {
+            const { isSignedIn, nextStep } = await signIn({ 
+                username : formData.username, 
+                password: formData.password });
+            props.updateAuth(true)
+            Navigate('/home')
+          } catch (error) {
+            setError(error.message);
+          }
+
     }
 
     return (
@@ -33,13 +47,14 @@ function Login() {
                 </div>
             ) : (
                 <form onSubmit={handleSubmit}>
+                    {error && <p className="error">{error}</p>}
                     <div className="form-group">
-                        <label htmlFor="email">Email:</label>
+                        <label htmlFor="username">Username:</label>
                         <input
-                            type="email"
-                            id="email"
-                            name="email"
-                            value={formData.email}
+                            type="text"
+                            id="username"
+                            name="username"
+                            value={formData.username}
                             onChange={handleChange}
                             required
                         />
