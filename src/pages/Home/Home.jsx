@@ -2,7 +2,7 @@ import React from "react";
 import "./Home.css"
 import { Link } from "react-router-dom";
 
-function Home(){
+function Home(props){
     const [allCoins , setAllCoins ] = React.useState([]);
     const [displayCoins, setDisplay] = React.useState([]);
     const [input, setInput] = React.useState("");
@@ -55,6 +55,7 @@ function Home(){
                 <h1>Largest <br/> Crypto Coins by Market Capitalization</h1>
                 <p>Track Your Favorite Cryptocurrencies: Create Custom Watchlists with Our Secure Crypto Tracking App 
                 </p>
+                {props.isAuthenticated && (<p> Singed In</p>)}
                 <form onSubmit={handleSubmit}>
                     <input onChange={handleChange} value={input} type="text" placeholder="Search Coin"  required/>
                     <button type="submit">Search</button>

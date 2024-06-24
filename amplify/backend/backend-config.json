@@ -18,7 +18,7 @@
     }
   },
   "auth": {
-    "cryptofolioeb46cdc7": {
+    "cryptofolio3d9c6861": {
       "customAuth": false,
       "dependsOn": [],
       "frontendAuthConfig": {
@@ -34,9 +34,7 @@
           "EMAIL"
         ],
         "socialProviders": [],
-        "usernameAttributes": [
-          "EMAIL"
-        ],
+        "usernameAttributes": [],
         "verificationMechanisms": [
           "EMAIL"
         ]
@@ -46,7 +44,7 @@
     }
   },
   "storage": {
-    "s3bf55b77f": {
+    "s3dd28007c": {
       "dependsOn": [],
       "providerPlugin": "awscloudformation",
       "service": "S3"

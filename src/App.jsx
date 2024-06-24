@@ -9,10 +9,11 @@ import ContactUs from "./pages/ContactUs/ContactUs";
 import About from "./pages/About/About";
 import SignUp from "./pages/SignUp/SignUp";
 import Login from "./pages/Login/Login";
+import Validate from "./pages/Validate/Validate";
 
 
 function App() {
-  const [isAuthenticated, setAuthenticated] = React.useState(flase)
+  const [isAuthenticated, setAuthenticated] = React.useState(false)
   function updateAuth(newVal) {
     setAuthenticated(newVal)
   }
@@ -27,7 +28,8 @@ function App() {
           <Route path="/about" element={<About />} />
           <Route path="/contactus" element={<ContactUs />} />
           <Route path="/coin/:coinId" element={<Coin />} />
-          <Route path="/signup" element={<SignUp  isAuthenticated={isAuthenticated} updateAuth={updateAuth}  />} />
+          <Route path="/signup" element={<SignUp  isAuthenticated={isAuthenticated} />} />
+          <Route path="/validate" element={<Validate  isAuthenticated={isAuthenticated} updateAuth={updateAuth}  />} />
           <Route path="/login" element={<Login isAuthenticated={isAuthenticated} updateAuth={updateAuth}  />} />
           <Route path="*" element={<NoPage />} />
         </Routes>

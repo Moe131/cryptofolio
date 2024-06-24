@@ -1,10 +1,10 @@
 {
   "version": "1",
   "cognitoConfig": {
-    "identityPoolName": "cryptofolioeb46cdc7_identitypool_eb46cdc7",
+    "identityPoolName": "cryptofolio3d9c6861_identitypool_3d9c6861",
     "allowUnauthenticatedIdentities": false,
-    "resourceNameTruncated": "cryptoeb46cdc7",
-    "userPoolName": "cryptofolioeb46cdc7_userpool_eb46cdc7",
+    "resourceNameTruncated": "crypto3d9c6861",
+    "userPoolName": "cryptofolio3d9c6861_userpool_3d9c6861",
     "autoVerifiedAttributes": [
       "email"
     ],
@@ -31,15 +31,12 @@
     "userpoolClientReadAttributes": [
       "email"
     ],
-    "userpoolClientLambdaRole": "cryptoeb46cdc7_userpoolclient_lambda_role",
+    "userpoolClientLambdaRole": "crypto3d9c6861_userpoolclient_lambda_role",
     "userpoolClientSetAttributes": false,
-    "sharedId": "eb46cdc7",
-    "resourceName": "cryptofolioeb46cdc7",
+    "sharedId": "3d9c6861",
+    "resourceName": "cryptofolio3d9c6861",
     "authSelections": "identityPoolAndUserPool",
     "useDefault": "default",
-    "usernameAttributes": [
-      "email"
-    ],
     "userPoolGroupList": [],
     "serviceName": "Cognito",
     "usernameCaseSensitive": false,
