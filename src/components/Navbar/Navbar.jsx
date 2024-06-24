@@ -4,6 +4,7 @@ import menuIcon from "../../assets/menu.png"
 import { Link } from "react-router-dom";
 import "./Navbar.css"
 import { signOut } from 'aws-amplify/auth';
+import profileIcon from "../../assets/user.png"
 
 
 function Navbar(props) {
@@ -34,13 +35,14 @@ function Navbar(props) {
         buttons = (
             <div className="nav-right">
                 <button className="login-btn"><Link to="/" className="button-link" onClick={handleSignOut}>Sign Out</Link></button>
+                <Link> <img className="profile-icon" src={profileIcon} alt="Profile Icon"/></Link>
             </div> )    }
     }
 
     return (
         <div className="navbar">
             <Link to={"/"}>
-                <img src={logo} alt="Logo" />
+                <img className="logo" src={logo} alt="Logo" />
             </Link>
             <ul className={ menuChecked ? "nav-list" : "nav-list-res"}>
                 <li><Link to="/" className="nav-link" onClick={handleLinkClick}>Home</Link></li>

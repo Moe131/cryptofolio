@@ -74,6 +74,9 @@
     color: white;
 }
 
+.profile-icon {
+    width: 40px;
+}
 
 @media (max-width: 800px) {
     .navbar {
@@ -81,7 +84,7 @@
         justify-content: space-between;
     }
 
-    .navbar img {
+    .logo{
         width: 220px;
     }
     .navbar .nav-list {
@@ -102,9 +105,6 @@
         background-color: rgb(48, 158, 124);
     }
 
-    .navbar .nav-right {
-        display: flex;
-    }
 
     .navbar .menu-icon {
         display: inline-block;
@@ -123,8 +123,8 @@
         padding: 5px 5px;
     }
 
-    .navbar img {
-        width: 140px;
+    .logo{
+        width: 200px;
     }
 
     .navbar .nav-list {
