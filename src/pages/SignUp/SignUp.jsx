@@ -44,7 +44,6 @@ function SignUp(props) {
             navigate ('/validate')
           } catch (error) {
             setError(error.message);
-            console.log('error signing up:', error);
           }
     }
 

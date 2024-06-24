@@ -55,7 +55,6 @@ function Home(props){
                 <h1>Largest <br/> Crypto Coins by Market Capitalization</h1>
                 <p>Track Your Favorite Cryptocurrencies: Create Custom Watchlists with Our Secure Crypto Tracking App 
                 </p>
-                {props.isAuthenticated && (<p> Singed In</p>)}
                 <form onSubmit={handleSubmit}>
                     <input onChange={handleChange} value={input} type="text" placeholder="Search Coin"  required/>
                     <button type="submit">Search</button>

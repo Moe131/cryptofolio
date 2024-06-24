@@ -21,7 +21,7 @@ function App() {
   return (
     <div className="app">
       <BrowserRouter>
-      <Navbar />
+      <Navbar isAuthenticated={isAuthenticated} updateAuth={updateAuth} />
         <Routes>
           <Route index element={<Home isAuthenticated={isAuthenticated} />} />
           <Route path="/home" element={<Home />} />
