@@ -11,17 +11,17 @@
     align-items: center;
     text-align: center;
     gap : 30px;
-
-    h1 {
+}
+.hero h1 {
         font-size : 40px;
-    }
+}
 
-    p {
+.hero p {
         width: 75%;
         line-height: 1.5;
-    }
+}
 
-    form {
+.hero form {
         padding : 8px;
         width: 80%;
         background-color: white;
@@ -50,7 +50,7 @@
             cursor: pointer;
         }
     }
-}
+
 
 .crypto-table {
     max-width: 800px;

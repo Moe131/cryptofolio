@@ -26,7 +26,7 @@ function App() {
       <Navbar isAuthenticated={isAuthenticated} updateAuth={updateAuth} />
         <Routes>
           <Route index element={<Home isAuthenticated={isAuthenticated} />} />
-          <Route path="/home" element={<Home />} />
+          <Route path="/home" element={<Home  isAuthenticated={isAuthenticated} />} />
           <Route path="/about" element={<About />} />
           <Route path="/contactus" element={<ContactUs />} />
           <Route path="/coin/:coinId" element={<Coin />} />

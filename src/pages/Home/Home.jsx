@@ -51,6 +51,20 @@ function Home(props){
 
     return (
         <div className="home">
+            { props.isAuthenticated &&
+                <div className="hero">
+                    <h1>Your Watchlist</h1>
+                    <div className="crypto-table">
+                        <div className="table-layout">
+                            <p>#</p>
+                            <p>Coins</p>
+                            <p>Price</p>
+                            <p>24H Change</p>
+                            <p className="market-cap">Market Cap</p>
+                        </div>
+                    </div>            
+                </div>            
+            }
             <div className="hero">
                 <h1>Largest <br/> Crypto Coins by Market Capitalization</h1>
                 <p>Track Your Favorite Cryptocurrencies: Create Custom Watchlists with Our Secure Crypto Tracking App 
