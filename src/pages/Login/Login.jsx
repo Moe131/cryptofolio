@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import "./Login.css";
-import { useNavigate } from "react-router-dom";
+import { useNavigate, Link } from "react-router-dom";
 import { signIn } from 'aws-amplify/auth';
 
 
@@ -71,6 +71,7 @@ function Login(props) {
                         />
                     </div>
                     <button type="submit">Login</button>
+                    <Link className="forgot" to={"/forgot-password"}> <p className="forgot"> Forgot password  </p></Link>
                 </form>
             )}
         </div>
