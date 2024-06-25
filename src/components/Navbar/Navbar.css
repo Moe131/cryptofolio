@@ -39,7 +39,7 @@
     display: flex;
     align-items: center;
     gap: 10px;
-    padding: 10px;
+    padding: 5px;
 }
 
 .navbar .nav-right select {
@@ -124,7 +124,7 @@
     }
 
     .logo{
-        width: 200px;
+        width: 95%;
     }
 
     .navbar .nav-list {
@@ -147,16 +147,21 @@
 
     .navbar .menu-icon {
         display: inline-block;
-        width: 35px;
+        width: 90%;
         cursor: pointer;
         margin-right: 4px;
 
     }
     .navbar .nav-right button {
-        padding: 9px 10px;
-        font-size: 0.8rem;
+        padding: 9px 11px;
+        font-size: 70%;
         gap: 5px;
+        min-width: 65px;
 
+    }
+    .profile-icon {
+        width: 100%;
+        min-width: 27px;
     }
 
 }
