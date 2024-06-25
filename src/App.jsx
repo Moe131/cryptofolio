@@ -10,6 +10,8 @@ import About from "./pages/About/About";
 import SignUp from "./pages/SignUp/SignUp";
 import Login from "./pages/Login/Login";
 import Validate from "./pages/Validate/Validate";
+import Profile from "./pages/Profile/Profile";
+
 
 
 function App() {
@@ -31,6 +33,7 @@ function App() {
           <Route path="/signup" element={<SignUp  isAuthenticated={isAuthenticated} />} />
           <Route path="/validate" element={<Validate  isAuthenticated={isAuthenticated} updateAuth={updateAuth}  />} />
           <Route path="/login" element={<Login isAuthenticated={isAuthenticated} updateAuth={updateAuth}  />} />
+          <Route path="/profile" element={<Profile isAuthenticated={isAuthenticated}  />} />
           <Route path="*" element={<NoPage />} />
         </Routes>
         <Footer />
