@@ -34,7 +34,7 @@ function Navbar(props) {
     else {
         buttons = (
             <div className="nav-right">
-                <button className="login-btn"><Link to="/" className="button-link" onClick={handleSignOut}>Sign Out</Link></button>
+                <button className="signout-btn"><Link to="/" className="button-link" onClick={handleSignOut}>Sign Out</Link></button>
                 <Link> <img className="profile-icon" src={profileIcon} alt="Profile Icon"/></Link>
             </div> )    }
     }

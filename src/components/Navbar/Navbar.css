@@ -73,6 +73,10 @@
     background-color: rgba(65, 211, 165, 0.694);
     color: white;
 }
+.navbar .nav-right .signout-btn {
+    background-color: rgba(65, 211, 165, 0.694);
+    color: white;
+}
 
 .profile-icon {
     width: 40px;
@@ -156,12 +160,17 @@
         padding: 9px 11px;
         font-size: 70%;
         gap: 5px;
-        min-width: 65px;
 
     }
     .profile-icon {
         width: 100%;
         min-width: 27px;
+    }
+    .signout-btn {
+        min-width: 65px;
+    }
+    .signup-btn {
+        min-width: 62px;
     }
 
 }
