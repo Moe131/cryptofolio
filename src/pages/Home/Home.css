@@ -37,6 +37,7 @@
             outline: none;
             border: none;
             padding-left: 10px;
+            min-width: 100px;
         }
 
         button {
@@ -127,12 +128,15 @@
         font-size : 35px;
     }
     .home .hero {
-        margin : 45px auto;
+        margin : 35px auto;
     }
     .home .hero button {
-        font-size: 13px;
+        margin-right: 0px;
+    }
+    .home .hero button {
+        font-size: 70%;
         padding: 5px 10px;
-        margin-right: auto;
+        margin: auto;
     }
 
 }
