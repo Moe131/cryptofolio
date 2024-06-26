@@ -1,14 +1,19 @@
-import React, { useState } from "react";
+import React from "react";
 import "./Profile.css";
 import { useNavigate } from "react-router-dom";
 
 
 function Profile(props) {
+    const navigate = useNavigate()
+    React.useEffect( () => {     
+        if (! props.isAuthenticated){
+        navigate('/login')
+        } }, [])
 
     return (
         <div className="profile">
-            <h1 className>Profile</h1>
-            <h3> Welcome back {props.user} !</h3>
+            <h1>Profile</h1>
+            <h3> Welcome back { window.localStorage.getItem("user")} !</h3>
             <p> You will be able to create your custom Watchlists soon ! </p>
             <p> Stay tuned for our next update ! </p>
 
