@@ -4,6 +4,7 @@ import App from './App.jsx'
 import './index.css'
 
 import { Amplify } from 'aws-amplify';
+import { generateClient } from 'aws-amplify/api';
 import awsconfig from './amplifyconfiguration.json'
 Amplify.configure(awsconfig)
 
@@ -12,3 +13,5 @@ ReactDOM.createRoot(document.getElementById('root')).render(
     <App />
   </React.StrictMode>,
 )
+
+export  {generateClient};

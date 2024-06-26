@@ -1,10 +1,16 @@
 import React from "react";
 import "./Home.css"
 import { Link } from "react-router-dom";
+import { generateClient } from "../../main"
+import { listCoins, getCoin } from "../../graphql/queries";
+import { createCoin } from "../../graphql/mutations";
+
+
 
 function Home(props){
     const [allCoins , setAllCoins ] = React.useState([]);
     const [displayCoins, setDisplay] = React.useState([]);
+    const [userCoins, setUserCoins ] = React.useState([]);
     const [input, setInput] = React.useState("");
 
     function fetchAll(){
@@ -27,6 +33,7 @@ function Home(props){
     React.useEffect(
         () => {
              fetchAll()
+             fetchCoins()
         }, [] )
 
     function handleChange(event){
@@ -49,6 +56,35 @@ function Home(props){
         return displayCoins.slice(index, index+10)
     }
 
+    async function fetchCoins(){
+        try {
+            const client = generateClient()
+            /*
+             const res = await client.graphql( {query : createCoin,
+                variables: {
+                    input: {
+                        watchlist: "main",
+                        user: "Mohammad131",
+                        coinid: "bitcoin"
+                    }
+                }
+            } )
+            */
+            const coinsData = await client.graphql( {query : listCoins, 
+                variables: {
+                filter: {
+                    user: {eq : window.localStorage.getItem("user")}
+                    }
+                }
+            } )
+
+            const coins = coinsData.data.listCoins.items
+            setUserCoins(coins)
+        } catch(err){
+            console.error(err)
+        }
+    }
+
     return (
         <div className="home">
             { props.isAuthenticated &&
@@ -62,6 +98,13 @@ function Home(props){
                             <p>24H Change</p>
                             <p className="market-cap">Market Cap</p>
                         </div>
+                        {userCoins.map( (coin, index) => {
+                        return (
+                        <Link to={"/coin/"+coin.coinid} className="table-layout" key={index}> 
+                            <p>{coin.coinid}</p>
+                        </Link>
+                        )
+                    } )}
                     </div>            
                 </div>            
             }
