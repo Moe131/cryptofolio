@@ -30,6 +30,8 @@ function Login(props) {
                 username : formData.username, 
                 password: formData.password });
             props.updateAuth(true)
+            window.localStorage.setItem("isLoggedIn", true)
+            window.localStorage.setItem("user", formData.username)
             Navigate('/home')
           } catch (error) {
             setError(error.message);

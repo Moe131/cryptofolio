@@ -21,6 +21,8 @@ function Navbar(props) {
     async function handleSignOut() {
         await signOut()
         props.updateAuth(false)
+        window.localStorage.removeItem("isLoggedIn")
+        window.localStorage.removeItem("user")
     }
 
     let buttons;

@@ -16,7 +16,8 @@ import ForgotPassword from "./pages/ForgotPassword/ForgotPassword";
 
 
 function App() {
-  const [isAuthenticated, setAuthenticated] = React.useState(false)
+  const [isAuthenticated, setAuthenticated] = React.useState(window.localStorage.getItem("isLoggedIn") === "true")
+  const [user, setUser] = React.useState(window.localStorage.getItem("user"))
   function updateAuth(newVal) {
     setAuthenticated(newVal)
   }
@@ -35,7 +36,7 @@ function App() {
           <Route path="/validate" element={<Validate  isAuthenticated={isAuthenticated} updateAuth={updateAuth}  />} />
           <Route path="/login" element={<Login isAuthenticated={isAuthenticated} updateAuth={updateAuth}  />} />
           <Route path="/forgot-password" element={<ForgotPassword />} />
-          <Route path="/profile" element={<Profile isAuthenticated={isAuthenticated}  />} />
+          <Route path="/profile" element={<Profile isAuthenticated={isAuthenticated} user={user} />} />
           <Route path="*" element={<NoPage />} />
         </Routes>
         <Footer />

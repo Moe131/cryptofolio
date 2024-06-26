@@ -32,8 +32,9 @@ function Validate(props) {
                 confirmationCode: formData.code
               });
               props.updateAuth(true)
+              window.localStorage.setItem("isLoggedIn", true)
+              window.localStorage.setItem("user", formData.username)
               navigate ('/')
-
             } catch (error) {
               console.log('error confirming sign up', error);
         }
