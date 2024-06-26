@@ -33,7 +33,8 @@ function Home(props){
     React.useEffect(
         () => {
              fetchAll()
-             fetchCoins()
+             if (props.isAuthenticated)
+                fetchCoins()
         }, [] )
 
     function handleChange(event){
@@ -79,7 +80,7 @@ function Home(props){
             } )
 
             const coins = coinsData.data.listCoins.items
-            setUserCoins(coins)
+            setUserCoins(coins.map((c)=> {return c.coinid}))
         } catch(err){
             console.error(err)
         }
@@ -98,12 +99,22 @@ function Home(props){
                             <p>24H Change</p>
                             <p className="market-cap">Market Cap</p>
                         </div>
-                        {userCoins.map( (coin, index) => {
-                        return (
-                        <Link to={"/coin/"+coin.coinid} className="table-layout" key={index}> 
-                            <p>{coin.coinid}</p>
-                        </Link>
-                        )
+                        {allCoins.map( (coin, index) => {
+                            if ( userCoins.includes(coin.id) ) {
+                                return (
+                                    <Link to={"/coin/"+coin.id} className="table-layout" key={index}> 
+                                        <p> {coin.market_cap_rank} </p>
+                                        <div className="logo-name"> 
+                                            <img src={coin.image} alt = "Coin logo"/>
+                                            <p> {coin.name + " - " + coin.symbol} </p>                        
+                                        </div>
+                                        <p> ${coin.current_price} </p>
+                                        <p className={coin.price_change_percentage_24h > 0 ? "green" : "red"}
+                                        > { Math.floor(coin.price_change_percentage_24h * 100)/100 }% </p>
+                                        <p className="market-cap"> ${coin.market_cap.toLocaleString()} </p>
+                                    </Link>
+                                )
+                            }
                     } )}
                     </div>            
                 </div>            
