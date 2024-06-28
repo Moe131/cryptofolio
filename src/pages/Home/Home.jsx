@@ -3,7 +3,7 @@ import "./Home.css"
 import { Link } from "react-router-dom";
 import { generateClient } from "../../main"
 import { listCoins, getCoin } from "../../graphql/queries";
-import { createCoin } from "../../graphql/mutations";
+import { createCoin , deleteCoin} from "../../graphql/mutations";
 import addIcon from "../../assets/add.png"
 import removeIcon from "../../assets/remove.png"
 
@@ -13,7 +13,8 @@ import removeIcon from "../../assets/remove.png"
 function Home(props){
     const [allCoins , setAllCoins ] = React.useState([]);
     const [displayCoins, setDisplay] = React.useState([]);
-    const [userCoins, setUserCoins ] = React.useState([]);
+    const [userCoins, setUserCoins ] = React.useState(new Map());
+    const [coinToAdd, setCoinToAdd]  = React.useState("");
     const [input, setInput] = React.useState("");
 
     function fetchAll(){
@@ -37,7 +38,7 @@ function Home(props){
         () => {
              fetchAll()
              if (props.isAuthenticated){
-                fetchCoins()
+                fetchUserCoins()
              }
         }, [] )
 
@@ -53,6 +54,10 @@ function Home(props){
         }
     }
 
+    function handleCoinsToAdd(event){
+        setCoinToAdd(event.target.value)
+    }
+
     function handleSubmit(event){
         event.preventDefault()
     }
@@ -61,7 +66,7 @@ function Home(props){
         return displayCoins.slice(index, index+10)
     }
 
-    async function fetchCoins(){
+    async function fetchUserCoins(){
         try {
             const client = generateClient()
             /*
@@ -84,10 +89,40 @@ function Home(props){
             } )
 
             const coins = coinsData.data.listCoins.items
-            setUserCoins(coins.map((c)=> {return c.coinid}))
+            const hashMap = new Map()
+            coins.forEach((c) => {
+                hashMap.set(c.coinid, c.id);
+              });
+            setUserCoins( hashMap)
         } catch(err){
             console.error(err)
         }
+    }
+
+    async function addUserCoin(coinToAdd){
+        const client = generateClient()
+        const res = await client.graphql( {query : createCoin,
+            variables: {
+                input: {
+                    watchlist: "main",
+                    user: window.localStorage.getItem("user"),
+                    coinid: coinToAdd,
+                }
+            }
+        } )
+        fetchUserCoins()
+    }
+    
+    async function deleteUserCoin(coinId){
+        const client = generateClient()
+        const res = await client.graphql( {query : deleteCoin,
+            variables: {
+                input: {
+                    id : coinId,
+                }
+            }
+        } )
+        fetchUserCoins()
     }
 
     return (
@@ -104,10 +139,10 @@ function Home(props){
                             <p className="market-cap">Market Cap</p>
                         </div>
                         {allCoins.map( (coin, index) => {
-                            if ( userCoins.includes(coin.id) ) {
+                            if ( userCoins.has(coin.id) ) {
                                 return (
                                     <div className="watchlist" key={index}>
-                                    <img className="remove" src={removeIcon} />
+                                    <img className="remove" src={removeIcon} onClick={() => deleteUserCoin(userCoins.get(coin.id))}/>
                                     <Link to={"/coin/"+coin.id} className="table-layout" > 
                                     
                                         <p> {coin.market_cap_rank} </p>
@@ -124,15 +159,23 @@ function Home(props){
                                 )
                             }
                     } )}
+                    <form className="add-form">
+                    <select className="add-select"onChange={handleCoinsToAdd} value={coinToAdd}>
+                        <option value="">Select a Coin to Add</option>
+                        {allCoins.map((coin) => { return  <option key={coin.id} value={coin.id}>{coin.name}</option> })}
+                        </select>
+                        <img className="add" src={addIcon} onClick={() => addUserCoin(coinToAdd)}/>   
+                    </form>
+
+
                     </div>  
-                        <img className="add" src={addIcon} />
                 </div>            
             }
             <div className="hero">
                 <h1>Largest <br/> Crypto Coins by Market Capitalization</h1>
                 <p>Track Your Favorite Cryptocurrencies: Create Custom Watchlists with Our Secure Crypto Tracking App 
                 </p>
-                <form onSubmit={handleSubmit}>
+                <form className="hero-form" onSubmit={handleSubmit}>
                     <input onChange={handleChange} value={input} type="text" placeholder="Search Coin"  required/>
                     <button type="submit">Search</button>
                 </form>

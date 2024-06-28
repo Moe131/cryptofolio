@@ -21,7 +21,7 @@
         line-height: 1.5;
 }
 
-.hero form {
+.hero-form {
         padding : 8px;
         width: 80%;
         background-color: white;
@@ -61,13 +61,30 @@
 
 .add {
     max-width: 30px;
+    margin: 5px 0px;
 }
 .remove {
     padding-left: 40%;
     max-width: 30px;
 }
 .add:hover , .remove:hover {
-    transform: scale(1.10);
+    transform: scale(1.15);
+}
+
+.add-form {
+    margin : 10px auto;
+    width: 80%;
+    height: 35px;
+    border-radius: 5px;
+    font-size: 10px;
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+}
+
+.add-select {
+    width: 80%;
+    border-radius: 5px;
 }
 
 .crypto-table {
