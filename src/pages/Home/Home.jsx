@@ -4,6 +4,9 @@ import { Link } from "react-router-dom";
 import { generateClient } from "../../main"
 import { listCoins, getCoin } from "../../graphql/queries";
 import { createCoin } from "../../graphql/mutations";
+import addIcon from "../../assets/add.png"
+import removeIcon from "../../assets/remove.png"
+
 
 
 
@@ -33,8 +36,9 @@ function Home(props){
     React.useEffect(
         () => {
              fetchAll()
-             if (props.isAuthenticated)
+             if (props.isAuthenticated){
                 fetchCoins()
+             }
         }, [] )
 
     function handleChange(event){
@@ -102,7 +106,10 @@ function Home(props){
                         {allCoins.map( (coin, index) => {
                             if ( userCoins.includes(coin.id) ) {
                                 return (
-                                    <Link to={"/coin/"+coin.id} className="table-layout" key={index}> 
+                                    <div className="watchlist" key={index}>
+                                    <img className="remove" src={removeIcon} />
+                                    <Link to={"/coin/"+coin.id} className="table-layout" > 
+                                    
                                         <p> {coin.market_cap_rank} </p>
                                         <div className="logo-name"> 
                                             <img src={coin.image} alt = "Coin logo"/>
@@ -113,10 +120,12 @@ function Home(props){
                                         > { Math.floor(coin.price_change_percentage_24h * 100)/100 }% </p>
                                         <p className="market-cap"> ${coin.market_cap.toLocaleString()} </p>
                                     </Link>
+                                    </div>
                                 )
                             }
                     } )}
-                    </div>            
+                    </div>  
+                        <img className="add" src={addIcon} />
                 </div>            
             }
             <div className="hero">

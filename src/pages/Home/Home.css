@@ -52,6 +52,24 @@
     }
 
 
+.watchlist {
+    display: grid;
+    grid-template-columns: 0.0fr 6fr;
+    align-items: center;
+
+}
+
+.add {
+    max-width: 30px;
+}
+.remove {
+    padding-left: 40%;
+    max-width: 30px;
+}
+.add:hover , .remove:hover {
+    transform: scale(1.10);
+}
+
 .crypto-table {
     max-width: 800px;
     margin: auto;
@@ -137,6 +155,13 @@
         font-size: 70%;
         padding: 5px 10px;
         margin: auto;
+    }
+    .add {
+        max-width: 25px;
+    }
+    .remove {
+        padding-left: 40%;
+        max-width: 25px;
     }
 
 }
