@@ -1,7 +1,8 @@
 import React from "react";
 import "./Home.css"
 import { Link } from "react-router-dom";
-import { generateClient } from "../../main"
+import { Amplify } from 'aws-amplify';
+import { generateClient } from "aws-amplify/api"
 import { listCoins, getCoin } from "../../graphql/queries";
 import { createCoin , deleteCoin} from "../../graphql/mutations";
 import addIcon from "../../assets/add.png"
