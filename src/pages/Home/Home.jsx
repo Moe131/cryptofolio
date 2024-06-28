@@ -7,6 +7,7 @@ import { listCoins, getCoin } from "../../graphql/queries";
 import { createCoin , deleteCoin} from "../../graphql/mutations";
 import addIcon from "../../assets/add.png"
 import removeIcon from "../../assets/remove.png"
+import adjustIcon from "../../assets/adjust.png"
 
 
 
@@ -14,6 +15,7 @@ import removeIcon from "../../assets/remove.png"
 function Home(props){
     const [allCoins , setAllCoins ] = React.useState([]);
     const [displayCoins, setDisplay] = React.useState([]);
+    const [editMode, setEditMode] = React.useState(false)
     const [userCoins, setUserCoins ] = React.useState(new Map());
     const [coinToAdd, setCoinToAdd]  = React.useState("");
     const [input, setInput] = React.useState("");
@@ -70,17 +72,6 @@ function Home(props){
     async function fetchUserCoins(){
         try {
             const client = generateClient()
-            /*
-             const res = await client.graphql( {query : createCoin,
-                variables: {
-                    input: {
-                        watchlist: "main",
-                        user: "Mohammad131",
-                        coinid: "bitcoin"
-                    }
-                }
-            } )
-            */
             const coinsData = await client.graphql( {query : listCoins, 
                 variables: {
                 filter: {
@@ -129,8 +120,12 @@ function Home(props){
     return (
         <div className="home">
             { props.isAuthenticated &&
+
                 <div className="hero">
+                    <div className="title-div">
                     <h1>Your Watchlist</h1>
+                    <img className="adjust"  src={adjustIcon} onClick={() => setEditMode(!editMode)} />
+                    </div>
                     <div className="crypto-table">
                         <div className="table-layout">
                             <p>#</p>
@@ -142,10 +137,9 @@ function Home(props){
                         {allCoins.map( (coin, index) => {
                             if ( userCoins.has(coin.id) ) {
                                 return (
-                                    <div className="watchlist" key={index}>
-                                    <img className="remove" src={removeIcon} onClick={() => deleteUserCoin(userCoins.get(coin.id))}/>
+                                    <div className={editMode ? "watchlist": "watchlist-hide"}  key={index}>
+                                    <img className={editMode ? "remove" : "remove-hide"} src={removeIcon} onClick={() => deleteUserCoin(userCoins.get(coin.id))}/>
                                     <Link to={"/coin/"+coin.id} className="table-layout" > 
-                                    
                                         <p> {coin.market_cap_rank} </p>
                                         <div className="logo-name"> 
                                             <img src={coin.image} alt = "Coin logo"/>
@@ -160,7 +154,7 @@ function Home(props){
                                 )
                             }
                     } )}
-                    <form className="add-form">
+                    <form className={editMode ? "add-form" : "add-form-hide"}>
                     <select className="add-select"onChange={handleCoinsToAdd} value={coinToAdd}>
                         <option value="">Select a Coin to Add</option>
                         {allCoins.map((coin) => { return  <option key={coin.id} value={coin.id}>{coin.name}</option> })}

@@ -51,6 +51,18 @@
         }
     }
 
+.title-div {
+    display: flex;
+    justify-content: center;
+    gap: 10px;    
+}
+
+.adjust {
+    width: 50px;
+}
+.adjust:hover {
+    transform: scale(1.15);
+}
 
 .watchlist {
     display: grid;
@@ -59,9 +71,16 @@
 
 }
 
+.watchlist-hide {
+
+}
+
 .add {
     max-width: 30px;
     margin: 5px 0px;
+}
+.remove-hide {
+    display: none;
 }
 .remove {
     padding-left: 40%;
@@ -69,6 +88,9 @@
 }
 .add:hover , .remove:hover {
     transform: scale(1.15);
+}
+.add-form-hide {
+    display: none;
 }
 
 .add-form {
