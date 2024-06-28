@@ -2,7 +2,9 @@
 
 ## Overview
 
-This full-stack web application tracks cryptocurrency prices in real-time. The frontend is built with React, and the backend is managed using AWS Amplify, utilizing DynamoDB for data storage. Users can sign up, monitor the current prices of various cryptocurrencies, and create and edit watchlists.
+This full-stack web application tracks cryptocurrency prices in real-time. The frontend is built with React, and the backend is managed using AWS Amplify, utilizing DynamoDB for data storage. Users can sign up, monitor the current prices of various cryptocurrencies, and create and edit watchlists. Visit :
+
+https://main.d2pujeh9fcxm5.amplifyapp.com/
 
 ## Features
 
