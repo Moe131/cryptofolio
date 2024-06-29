@@ -1,6 +1,8 @@
 import React from "react";
 import { useParams } from "react-router-dom";
 import "./Coin.css"
+import Tradingview from "./TradingViewWidget";
+
 
 function Coin(){
     const {coinId} = useParams()
@@ -26,14 +28,15 @@ function Coin(){
             <div className="coin">
                 <div className="coin-name">
                     <img src={coinData.image.large} />
-                    <h1><b>{coinData.name} ({coinData.symbol})</b></h1>
+                    <h2>{coinData.name}</h2>
+                    <span>{coinData.symbol.toUpperCase()}</span>
                 </div>
                 <div className="coin-details">
-                    <p>{coinData.description.en.split(".")[0]}</p>
-                    <br />
-                    <p> Website : <a href={coinData.links.homepage}>{coinData.links.homepage}</a></p>
-                    <br/>
+                    <h1> $ {coinData.market_data.current_price.usd.toLocaleString()}</h1>
                     <div className="coin-info">
+                    <div className="chart">
+                        <Tradingview  symbol={coinData.symbol.toUpperCase()} />
+                    </div>
                     <ul>
                         <li>Crypto Market Rank</li>
                         <li> #{coinData.market_cap_rank}</li>
@@ -75,8 +78,15 @@ function Coin(){
                         <li> $ {coinData.market_data.low_24h.usd.toLocaleString()}</li>
                     </ul>
                     </div>
-
+                    <br />
+                    <h2>About {coinData.name} </h2>
+                    <br />
+                    <p dangerouslySetInnerHTML={{__html: coinData.description.en}}></p>
+                    <br />
+                    <p> Website : <a href={coinData.links.homepage[0]}>{coinData.links.homepage[0]}</a></p>
+                    <br />
                 </div>
+                <a className="buy-button" href={coinData.tickers[3].trade_url}>Buy {coinData.name} Now</a>
             </div>
         )
     }

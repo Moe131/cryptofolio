@@ -1,8 +1,11 @@
 .coin {
-    padding: 40px 40px;
+    
+    padding: 20px 40px;
     display: grid;
     place-self: center;
     text-align: center;
+
+
     
     .coin-name {
         place-self: center;
@@ -11,13 +14,32 @@
             max-width: 100px;
         }
     }
+
+    .buy-button {
+        margin:0px  auto;
+        padding: 10px 20px;
+        border-radius: 20px;
+        width: 150px;
+        font-size: 13px;
+        color: black;
+        background: rgb(255, 255, 255);
+        border: none;
+        cursor: pointer;
+        text-decoration: none;
+        margin-bottom: 20px;
+    }
+    .buy-button:hover {
+    transform: scale(1.1);
+    }
     .coin-details a {
         color : rgb(186, 246, 167);
     }
     .coin-info {
         max-width: 600px;
         margin: 30px auto;
+    
         ul {
+            
             display: flex;
             justify-content: space-between;
             padding: 10px 0px;
@@ -30,9 +52,15 @@
         .red {
             color : rgb(255, 93, 93);
         }
+        
     }
 }
 
+.chart {
+    margin: 10px auto;
+    max-width: 800px;
+    height: 400px;
+    }
 
 .loading {
     display: grid;
