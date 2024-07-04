@@ -42,7 +42,7 @@
 
         button {
             border: none;
-            background: rgb(54, 165, 130);
+            background: #5e89d8;
             color: white;
             font-size: 16px;
             padding: 10px 30px;
@@ -112,7 +112,7 @@
 .crypto-table {
     max-width: 800px;
     margin: auto;
-    background-color: rgba(65, 211, 165, 0.344) ;
+    background-color: #5b82cb;
     border-radius: 15px;
 }
 
@@ -141,7 +141,7 @@
         color : greenyellow;
     }
     .red {
-        color : rgb(255, 93, 93);
+        color : rgb(255, 94, 58);
     }
 }
 

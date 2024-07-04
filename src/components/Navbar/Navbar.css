@@ -70,11 +70,11 @@
 }
 
 .navbar .nav-right .login-btn {
-    background-color: rgba(65, 211, 165, 0.694);
+    background-color: #5e89d8;
     color: white;
 }
 .navbar .nav-right .signout-btn {
-    background-color: rgba(65, 211, 165, 0.694);
+    background-color: #5e89d8;
     color: white;
 }
 
@@ -106,7 +106,7 @@
         top: 7rem;
         left: 0;
         height: 15rem;
-        background-color: rgb(48, 158, 124);
+        background-color: #5879b1;
     }
 
 
@@ -146,7 +146,6 @@
         top: 4.5rem;
         left: 0;
         height: 15rem;
-        background-color: rgb(48, 158, 124);
     }
 
     .navbar .menu-icon {

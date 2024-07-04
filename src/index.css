@@ -16,7 +16,7 @@ a  {
 .app {
   min-height: 100vh;
   color: white;
-  background: linear-gradient(109.6deg, rgb(72, 200, 160) 11.2%, rgb(32, 40, 48) 91.3%);
+  background: linear-gradient(115deg, #2b5876, #434576);
 }
 
 button:hover {
