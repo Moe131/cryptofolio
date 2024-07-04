@@ -14,7 +14,7 @@ function Profile(props) {
         <div className="profile">
             <h1>Profile</h1>
             <h3> Welcome back { window.localStorage.getItem("user")} !</h3>
-            <p> You will be able to create your custom Watchlists soon ! </p>
+            <p> You will be able to edit your account information soon ! </p>
             <p> Stay tuned for our next update ! </p>
 
         </div>

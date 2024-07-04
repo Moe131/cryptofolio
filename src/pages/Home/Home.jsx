@@ -16,7 +16,7 @@ function Home(props){
     const [allCoins , setAllCoins ] = React.useState([]);
     const [displayCoins, setDisplay] = React.useState([]);
     const [editMode, setEditMode] = React.useState(false)
-    const [userCoins, setUserCoins ] = React.useState(new Map());
+    const [userCoins, setUserCoins ] = React.useState();
     const [coinToAdd, setCoinToAdd]  = React.useState("");
     const [input, setInput] = React.useState("");
 
@@ -134,7 +134,8 @@ function Home(props){
                             <p>24H Change</p>
                             <p className="market-cap">Market Cap</p>
                         </div>
-                        {allCoins.map( (coin, index) => {
+                        {userCoins ? 
+                        allCoins.map( (coin, index) => {
                             if ( userCoins.has(coin.id) ) {
                                 return (
                                     <div className={editMode ? "watchlist": "watchlist-hide"}  key={index}>
@@ -151,9 +152,14 @@ function Home(props){
                                         <p className="market-cap"> ${coin.market_cap.toLocaleString()} </p>
                                     </Link>
                                     </div>
-                                )
-                            }
-                    } )}
+                                    )
+                                }
+                            } ) 
+                        : 
+                        <div className="loading">
+                            <div className="spin"></div>
+                        </div>
+                    }
                     <form className={editMode ? "add-form" : "add-form-hide"}>
                     <select className="add-select"onChange={handleCoinsToAdd} value={coinToAdd}>
                         <option value="">Select a Coin to Add</option>
