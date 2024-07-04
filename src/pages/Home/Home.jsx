@@ -86,6 +86,9 @@ function Home(props){
                 hashMap.set(c.coinid, c.id);
               });
             setUserCoins( hashMap)
+            if (hashMap.size === 0){
+                setEditMode(true)
+            }
         } catch(err){
             console.error(err)
         }
@@ -189,7 +192,9 @@ function Home(props){
                     <p>24H Change</p>
                     <p className="market-cap">Market Cap</p>
                 </div>
-                {getTop10(0).map( (coin, index) => {
+                {
+                allCoins.length != 0 ? 
+                getTop10(0).map( (coin, index) => {
                         return (
                         <Link to={"/coin/"+coin.id} className="table-layout" key={index}> 
                             <p> {coin.market_cap_rank} </p>
@@ -203,7 +208,12 @@ function Home(props){
                             <p className="market-cap"> ${coin.market_cap.toLocaleString()} </p>
                         </Link>
                         )
-                    } )}
+                    } )
+                :
+                <div className="loading">
+                <div className="spin"></div>
+                </div>
+                }
              </div>
         </div>
     )
