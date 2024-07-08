@@ -22,16 +22,22 @@
 }
 
 .navbar img {
-    max-width: 250px;
+    max-width: 230px;
 }
 
 .navbar .menu-icon {
     display: none;
 }
 
+.username {
+    color: white;
+    text-decoration: none;
+    size : 15px;
+}
+
 .navbar ul {
     display: flex;
-    gap: 38px;
+    gap: 30px;
     list-style: none;
 }
 
@@ -89,7 +95,7 @@
     }
 
     .logo{
-        width: 220px;
+        width: 200px;
     }
     .navbar .nav-list {
         display: none;
@@ -125,6 +131,10 @@
 @media (max-width: 480px) {
     .navbar {
         padding: 5px 5px;
+    }
+
+    .username {
+        display: none;
     }
 
     .logo{
