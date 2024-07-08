@@ -8,6 +8,9 @@ import { createCoin , deleteCoin} from "../../graphql/mutations";
 import addIcon from "../../assets/add.png"
 import removeIcon from "../../assets/remove.png"
 import adjustIcon from "../../assets/adjust.png"
+import nextIcon from "../../assets/next.png"
+import backIcon from "../../assets/back.png"
+
 
 
 
@@ -18,6 +21,7 @@ function Home(props){
     const [editMode, setEditMode] = React.useState(false)
     const [userCoins, setUserCoins ] = React.useState();
     const [coinToAdd, setCoinToAdd]  = React.useState("");
+    const [index, setIndex] = React.useState(0);
     const [input, setInput] = React.useState("");
 
     function fetchAll(){
@@ -66,7 +70,7 @@ function Home(props){
     }
 
     function getTop10(index){
-        return displayCoins.slice(index, index+10)
+        return displayCoins.slice(index*10, (index*10)+10)
     }
 
     async function fetchUserCoins(){
@@ -194,7 +198,7 @@ function Home(props){
                 </div>
                 {
                 allCoins.length != 0 ? 
-                getTop10(0).map( (coin, index) => {
+                getTop10(index).map( (coin, index) => {
                         return (
                         <Link to={"/coin/"+coin.id} className="table-layout" key={index}> 
                             <p> {coin.market_cap_rank} </p>
@@ -214,6 +218,10 @@ function Home(props){
                 <div className="spin"></div>
                 </div>
                 }
+             </div>
+             <div className="next">
+                <img src={backIcon}/>
+                 <img src={nextIcon}/>
              </div>
         </div>
     )
