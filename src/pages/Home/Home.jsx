@@ -219,10 +219,10 @@ function Home(props){
                 </div>
                 }
              </div>
-             <div className="next">
-                <img src={backIcon}/>
-                 <img src={nextIcon}/>
-             </div>
+             <div className="next-back">
+                    <img className="next" src={backIcon} onClick={() => setIndex(index>0 ? index-1 : index)}/>
+                    <img className="next" src={nextIcon} onClick={() => setIndex(index<9 ? index+1 : index )}/>
+                </div>
         </div>
     )
 }

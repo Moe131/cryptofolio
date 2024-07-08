@@ -1,20 +1,25 @@
 .home {
-    padding: 0px 0px;
-    padding-bottom: 40px;
-    display: grid;
+    padding: 0px 10px;
+    padding-bottom: 20px;   
+    justify-content: center; 
+}
 
+.next-back {
+    margin: 19px auto;
+    width: 100px;
+    display: flex;
 }
 .next {
-    margin: 20px auto;
-    display: flex;
-    gap: 10px;
-    img {
-        width: 40px;
-    }
+    margin: auto;
+    width: 45px;
+}
+
+.next:hover {
+    transform: scale(1.10);
 }
 .hero {
     max-width: 600px;
-    margin: 30px auto;
+    margin: 60px auto;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -77,6 +82,7 @@
     display: grid;
     grid-template-columns: 0.0fr 6fr;
     align-items: center;
+
 }
 
 .watchlist-hide {
@@ -119,7 +125,7 @@
 
 .crypto-table {
     max-width: 800px;
-    margin: 0px auto;
+    margin: auto;
     background-color: #5b82cb;
     border-radius: 15px;
 }
@@ -132,6 +138,7 @@
     border-bottom: 1px solid white;
     text-decoration: none;
     color: white;
+
 
     .market-cap {
         text-align: right;
@@ -167,10 +174,7 @@
     }
   }
   .home .hero {
-    margin : 20px auto;
-}
-.crypto-table {
-    margin: 0px 13px;
+    margin : 40px auto;
 }
 }
 
@@ -194,7 +198,9 @@
     .hero h1 {
         font-size : 34px;
     }
-
+    .home .hero {
+        margin : 30px auto;
+    }
     .home .hero button {
         margin-right: 0px;
     }
@@ -210,7 +216,7 @@
         padding-left: 40%;
         max-width: 25px;
     }
-    .crypto-table {
-        margin: 0px 13px;
+    .next {
+        width: 35px;
     }
 }
