@@ -12,6 +12,7 @@ import Login from "./pages/Login/Login";
 import Validate from "./pages/Validate/Validate";
 import Profile from "./pages/Profile/Profile";
 import ForgotPassword from "./pages/ForgotPassword/ForgotPassword";
+import Pricing from "./pages/Pricing/Pricing"
 
 
 
@@ -36,6 +37,8 @@ function App() {
           <Route path="/login" element={<Login isAuthenticated={isAuthenticated} updateAuth={updateAuth}  />} />
           <Route path="/forgot-password" element={<ForgotPassword />} />
           <Route path="/profile" element={<Profile isAuthenticated={isAuthenticated} />} />
+          <Route path="/pricing" element={<Pricing />} />
+
           <Route path="*" element={<NoPage />} />
         </Routes>
         <Footer />

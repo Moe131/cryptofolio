@@ -1,0 +1,48 @@
+.pricing {
+    text-align: center;
+    line-height: 1.7;
+    max-width: 800px;
+    margin: 40px auto;
+    padding: 20px;
+    border: 1px solid #ccc;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+.tier_container {
+    padding: 20px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+}
+.tier {
+    border: 1px solid #ccc;
+    padding: 20px;
+    margin: 10px;
+    width: 200px;
+    height: 180px;
+    border-radius: 8px;
+    background-color: #5b82cb;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.tier:hover {
+    transform: scale(1.10);
+}
+
+.tier h2 {
+    margin: 0;
+}
+
+.tier p {
+    margin: 10px 0;
+}
+
+@media (max-width: 800px) {
+    .pricing {
+        margin: 40px 10px;
+    }
+}
