@@ -6,10 +6,22 @@ This full-stack web application tracks cryptocurrency prices in real-time. The f
 
 https://main.d2pujeh9fcxm5.amplifyapp.com/
 
+
+![Screen Shot 2024-07-30 at 14 09 41](https://github.com/user-attachments/assets/115cb7e2-e126-40ac-ba2d-1b8cb4a1e4a9)
+![Screen Shot 2024-07-30 at 14 09 51](https://github.com/user-attachments/assets/d0a7733d-989c-4327-a6d8-e956e586bc10)
+![Screen Shot 2024-07-30 at 14 10 21](https://github.com/user-attachments/assets/235a5d83-078c-4145-8d9e-64653e7a6945)
+![Screen Shot 2024-07-30 at 14 11 02](https://github.com/user-attachments/assets/8df8b661-7908-4bc6-8bc2-2ee599c11edf)
+
+![photo_2024-07-30 14 15 42](https://github.com/user-attachments/assets/93bbc578-6fb1-49bb-bbde-76a6205824fa)
+![photo_2024-07-30 14 15 47](https://github.com/user-attachments/assets/c785386e-4efb-4bcd-a11e-fcab55c9ce5d)
+![photo_2024-07-30 14 15 45](https://github.com/user-attachments/assets/04442009-076f-4f79-b0cf-59649ad30239)
+
+
 ## Features
 
 - Real-time cryptocurrency price tracking
 - User authentication and profile management
+- Create, edit, and delete custom watchlists
 - Price alert notifications
 - Responsive and user-friendly interface
 
